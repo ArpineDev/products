@@ -15,11 +15,12 @@ const customStyles = {
 interface Props {
   children: ReactNode;
   onClose(): void;
+  setIsOpen: (open:boolean)=>void;
+  modalIsOpen:boolean;
 }
 
 export const Modal: FC<Props> = (props: Props) => {
-  const { children, onClose } = props;
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const { children, onClose, modalIsOpen, setIsOpen } = props;
 
   function closeModal() {
     setIsOpen(false);
